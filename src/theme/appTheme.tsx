@@ -16,5 +16,21 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 10
+  },
+  avatar: {
+    width: 150,
+    height: 150,
+    borderRadius: 100
+  },
+  menuContainer: {
+    marginVertical: 30,
+    marginHorizontal: 30,
+    alignItems: 'center'
+  },
+  menuTouchable: {
+    marginVertical: 10
+  },
+  menuText: {
+    fontSize: 20
   }
 })
