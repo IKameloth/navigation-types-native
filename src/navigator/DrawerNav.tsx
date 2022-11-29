@@ -3,7 +3,7 @@ import React from 'react'
 import { Image, useWindowDimensions, View, TouchableOpacity, Text } from 'react-native'
 import SettingScreen from '../screens/SettingScreen'
 import { styles } from '../theme/appTheme'
-import { StackNavigator } from './StackNavigator'
+import { Tabs } from './Tabs'
 
 const Drawer = createDrawerNavigator()
 
@@ -17,7 +17,7 @@ export const DrawerNav = () => {
       }}
       drawerContent={(props) => <MenuDrawer {...props} />}
     >
-      <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+      <Drawer.Screen name="Tabs" component={Tabs} />
       <Drawer.Screen name="SettingScreen" component={SettingScreen} />
     </Drawer.Navigator>
   )
@@ -37,7 +37,7 @@ const MenuDrawer = ({ navigation }: DrawerContentComponentProps) => {
       </View>
       {/* MENU */}
       <View style={styles.menuContainer}>
-        <TouchableOpacity style={styles.menuTouchable} onPress={() => navigation.navigate('StackNavigator')}>
+        <TouchableOpacity style={styles.menuTouchable} onPress={() => navigation.navigate('Tabs')}>
           <Text style={styles.menuText}>Navigation Stack</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuTouchable} onPress={() => navigation.navigate('SettingScreen')}>
