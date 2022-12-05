@@ -1,6 +1,8 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
+import React from 'react'
 import { Text } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import Icon from 'react-native-vector-icons/Ionicons'
 import { AlbumScreen } from '../screens/AlbumScreen'
 import { ChatScreen } from '../screens/ChatScreen'
 import { ContactScreen } from '../screens/ContactScreen'
@@ -29,16 +31,20 @@ export const TopTabNavigator = () => {
           let iconName: string = ''
           switch (route.name) {
             case 'ChatScreen':
-              iconName = 'CH'
+              iconName = 'chatbubbles-outline'
               break
             case 'ContactScreen':
-              iconName = 'CS'
+              iconName = 'list-circle-outline'
               break
             case 'AlbumScreen':
-              iconName = 'AS'
+              iconName = 'albums-outline'
               break
           }
-          return <Text style={{ color: props.color }}>{iconName}</Text>
+          return (
+            <Text style={{ color: props.color }}>
+              <Icon name={iconName} size={20} color={props.color} />
+            </Text>
+          )
         }
       })}
     >

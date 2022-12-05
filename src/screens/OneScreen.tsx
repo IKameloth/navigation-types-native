@@ -1,14 +1,19 @@
 import { DrawerScreenProps } from '@react-navigation/drawer'
 import React, { useEffect } from 'react'
 import { Button, Text, View, TouchableOpacity } from 'react-native'
-import { styles } from '../theme/appTheme'
+import Icon from 'react-native-vector-icons/Ionicons'
+import { styles, colors } from '../theme/appTheme'
 
 interface Props extends DrawerScreenProps<any, any> {}
 
 export const OneScreen = ({ navigation }: Props) => {
   useEffect(() => {
     navigation.setOptions({
-      headerLeft: () => <Button title="menu" onPress={() => navigation.toggleDrawer()} />
+      headerLeft: () => (
+        <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+          <Icon name="menu-outline" color={colors.primary} size={35} />
+        </TouchableOpacity>
+      )
     })
   }, [])
 
@@ -22,12 +27,14 @@ export const OneScreen = ({ navigation }: Props) => {
           style={{ ...styles.button, backgroundColor: '#FF9427' }}
           onPress={() => navigation.navigate('PersonScreen', { id: 1, name: 'Pedro' })}
         >
+          <Icon name="body-outline" color="black" size={35} />
           <Text>One Persons</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate('PersonScreen', { id: 2, name: 'Maria' })}
         >
+          <Icon name="woman-outline" color="black" size={35} />
           <Text>Second Persons</Text>
         </TouchableOpacity>
       </View>

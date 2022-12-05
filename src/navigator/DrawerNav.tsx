@@ -1,6 +1,7 @@
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer'
 import React from 'react'
 import { Image, useWindowDimensions, View, TouchableOpacity, Text } from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
 import SettingScreen from '../screens/SettingScreen'
 import { styles } from '../theme/appTheme'
 import { Tabs } from './Tabs'
@@ -37,10 +38,18 @@ const MenuDrawer = ({ navigation }: DrawerContentComponentProps) => {
       </View>
       {/* MENU */}
       <View style={styles.menuContainer}>
-        <TouchableOpacity style={styles.menuTouchable} onPress={() => navigation.navigate('Tabs')}>
+        <TouchableOpacity
+          style={{ ...styles.menuTouchable, flexDirection: 'row' }}
+          onPress={() => navigation.navigate('Tabs')}
+        >
+          <Icon name="compass-outline" size={23} />
           <Text style={styles.menuText}>Navigation Stack</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.menuTouchable} onPress={() => navigation.navigate('SettingScreen')}>
+        <TouchableOpacity
+          style={{ ...styles.menuTouchable, flexDirection: 'row' }}
+          onPress={() => navigation.navigate('SettingScreen')}
+        >
+          <Icon name="construct-outline" size={23} />
           <Text style={styles.menuText}>Settings</Text>
         </TouchableOpacity>
       </View>
